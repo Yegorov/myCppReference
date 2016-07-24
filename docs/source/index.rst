@@ -15,6 +15,9 @@ Contents:
 Базовые части кода на C/C++
 ---------------------------
 
+Hello world
+~~~~~~~~~~~
+
 Код, который выводит сообщение в поток вывода на C
 
 .. code-block:: c
@@ -27,7 +30,7 @@ Contents:
         printf("Hello world\n");
         return 0;
     }
-    
+   
 Код, который выводит сообщение в поток вывода на C++
 
 .. code-block:: c++
@@ -40,8 +43,30 @@ Contents:
         std::cout << "Hello world" << std::endl;
         return 0;
     }
+
+.. note::
+
+   В C++ при подключении стандартных C-заголовков, 
+   например ``#include <stdio.h>`` предпочтительней использовать
+   ``#include <cstdio>``, ``#include <cstring>``
+
+Определения класса
+~~~~~~~~~~~~~~~~~~
+
+.. code-block:: c++
     
-    
+    class class_name 
+    {
+    private:
+        int* pint_value;
+        ...
+    public:
+        int* get_pvalue()
+        {
+            return pint_value;
+        }
+    };
+   
 Indices and tables
 ==================
 

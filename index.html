@@ -48,6 +48,8 @@
 </div>
 <div class="section" id="c-c">
 <h2>Базовые части кода на C/C++<a class="headerlink" href="#c-c" title="Ссылка на этот заголовок">¶</a></h2>
+<div class="section" id="hello-world">
+<h3>Hello world<a class="headerlink" href="#hello-world" title="Ссылка на этот заголовок">¶</a></h3>
 <p>Код, который выводит сообщение в поток вывода на C</p>
 <div class="highlight-c"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -80,6 +82,29 @@
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
+<div class="admonition note">
+<p class="first admonition-title">Примечание</p>
+<p class="last">В C++ при подключении стандартных C-заголовков,
+например <code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;stdio.h&gt;</span></code> предпочтительней использовать
+<code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;cstdio&gt;</span></code>, <code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;cstring&gt;</span></code></p>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Определения класса<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h3>
+<div class="highlight-c++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">class_name</span>
+<span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">pint_value</span><span class="p">;</span>
+    <span class="p">...</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">get_pvalue</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">pint_value</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="indices-and-tables">

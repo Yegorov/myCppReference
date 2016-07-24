@@ -46,6 +46,10 @@ if "%1" == "help" (
 if "%1" == "clean" (
 	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
 	del /q /s %BUILDDIR%\*
+    
+    del /q ..\_sources\* ..\_static\* ..\.buildinfo ..\*.html ..\*.js ..\*.inv
+    rmdir ..\_sources ..\_static
+    
 	goto end
 )
 
@@ -79,6 +83,9 @@ if "%1" == "html" (
 	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The HTML pages are in %BUILDDIR%/html.
+    
+    del /q ..\_sources\* ..\_static\* ..\.buildinfo ..\*.html ..\*.js ..\*.inv
+    rmdir ..\_sources ..\_static
     
     move build\html\* ..\
     move build\html\_sources ..\
