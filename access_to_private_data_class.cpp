@@ -1,5 +1,47 @@
 #include <iostream>
 // Обращение к приватным данным по прямым адресам (не рекомендуется использовать данный подход)
+
+class MyTest
+{
+	private:
+		int a;
+		double k;
+		char c;
+	public:
+		MyTest(int a, double k, char c)
+		{
+			this->a = a;
+			this->k = k;
+			this->c = c;
+		}
+		void print() 
+		{
+			printf("a=%d, k=%f, c=%c\n", a, k, c);
+		}
+};
+
+class MyTest_
+{
+	public:
+		int a;
+		double k;
+		char c;
+};
+
+int __main(void) {
+	
+	MyTest* t = new MyTest(10, 2.2, 'a');
+	t->print();
+	MyTest_* t_ = (MyTest_*)t;
+	t_->a = 42;
+	t_->k = 9.9;
+	t_->c = 'y';
+	
+	t->print();
+	
+	return 0;
+}
+
 struct Cls {
     Cls(char c, double d, int i) {
         this->c = c;
