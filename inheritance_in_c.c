@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+// http://www.embedded.com/electronics-blogs/programming-pointers/4411013/Alternative-idioms-for-inheritance-in-C#_edn1
 typedef struct {
     int a;
     char c;
