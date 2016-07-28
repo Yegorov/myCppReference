@@ -14,9 +14,9 @@ struct vtbl
 
 struct myclass
 {
+    vtbl v;
     int a;
     int b;
-    vtbl v;
 };
 void print_myclass(void* pvoid)
 {
@@ -39,10 +39,10 @@ myclass* myclass_constructor(int a, int b)
 
 struct submyclass1
 {
+    vtbl v;
     myclass* base;
     int c;
     int d;
-    vtbl v;
 };
 
 void print_submyclass1(void* pvoid)
@@ -78,15 +78,16 @@ submyclass1* submyclass1_constructor(int a, int b, int c, int d)
 
 struct submyclass2
 {
-    myclass* base;
+    vtbl vv;
+    myclass base;
     int e;
-    vtbl v;
 };
 
 void print_submyclass2(void* pvoid)
 {
     submyclass2* this = (submyclass2*)pvoid;
-    myclass* base = this->base;
+    //myclass* base = this->base;
+    myclass* base = &(this->base);
     
     printf("from submyclass2 {a=%d, b=%d}\n", base->a, base->b);
     printf("from submyclass2 {e=%d}\n\n", this->e);
@@ -95,7 +96,8 @@ void print_submyclass2(void* pvoid)
 int sum_submyclass2(void* pvoid)
 {
     submyclass2* this = (submyclass2*)pvoid;
-    myclass* base = this->base;
+    //myclass* base = this->base;
+    myclass* base = &(this->base);
     
     return base->a + base->b + this->e;
 }
@@ -103,14 +105,16 @@ int sum_submyclass2(void* pvoid)
 submyclass2* submyclass2_constructor(int a, int b, int e)
 {
     submyclass2* this = (submyclass2*)malloc(sizeof(submyclass2));
-    myclass* base = (myclass*)malloc(sizeof(myclass));
+    //myclass* base = (myclass*)malloc(sizeof(myclass));
+    myclass* base = &(this->base);
+    
     base->a = a;
     base->b = b;
     this->e = e;
-    this->base = base;
+    //this->base = base;
     
-    this->v.print = print_submyclass2;
-    this->v.sum = sum_submyclass2;
+    this->vv.print = print_submyclass2;
+    this->vv.sum = sum_submyclass2;
 }
 
 
