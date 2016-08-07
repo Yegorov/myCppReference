@@ -57,15 +57,20 @@
 4
 5
 6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">getch</span><span class="p">();</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
+<p>Скомпилировать данный код (если сохранить его в файле <code class="file docutils literal"><span class="pre">hello.c</span></code>)
+можно командой:</p>
+<p><strong class="command">gcc hello.c -o hello</strong></p>
 <p>Код, который выводит сообщение в поток вывода на C++</p>
 <div class="highlight-c++"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -73,15 +78,20 @@
 4
 5
 6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Hello world&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
+<p>Скомпилировать данный код (если сохранить его в файле <code class="file docutils literal"><span class="pre">hello.cpp</span></code>)
+можно командой:</p>
+<p><strong class="command">g++ hello.cpp -o hello</strong></p>
 <div class="admonition note">
 <p class="first admonition-title">Примечание</p>
 <p class="last">В C++ при подключении стандартных C-заголовков,
@@ -91,7 +101,7 @@
 </div>
 <div class="section" id="id1">
 <h3>Определения класса<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h3>
-<div class="highlight-c++"><div class="highlight"><pre><span class="k">class</span> <span class="nc">class_name</span>
+<div class="highlight-c++"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">class_name</span>
 <span class="p">{</span>
 <span class="k">private</span><span class="o">:</span>
     <span class="kt">int</span><span class="o">*</span> <span class="n">pint_value</span><span class="p">;</span>

@@ -28,6 +28,10 @@ body {
     padding: 0;
 }
 
+strong.command {
+   font-family: "Consolas","Menlo","Deja Vu Sans Mono","Bitstream Vera Sans Mono", monospace, serif;
+   font-size: 17px; 
+}
 
 div.document {
     width: 940px;

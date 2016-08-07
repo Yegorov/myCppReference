@@ -28,8 +28,14 @@ Hello world
     int main(int argc, char** argv)
     {
         printf("Hello world\n");
+        getch();
         return 0;
     }
+    
+Скомпилировать данный код (если сохранить его в файле :file:`hello.c`) 
+можно командой: 
+
+:command:`gcc hello.c -o hello`
    
 Код, который выводит сообщение в поток вывода на C++
 
@@ -41,9 +47,15 @@ Hello world
     int main(int argc, char** argv)
     {
         std::cout << "Hello world" << std::endl;
+        std::cin.get();
         return 0;
     }
 
+Скомпилировать данный код (если сохранить его в файле :file:`hello.cpp`) 
+можно командой: 
+
+:command:`g++ hello.cpp -o hello`
+    
 .. note::
 
    В C++ при подключении стандартных C-заголовков, 
@@ -66,7 +78,11 @@ Hello world
             return pint_value;
         }
     };
-   
+
+    
+.. |nbsp| unicode:: 0xA0 
+   :trim:
+
 Indices and tables
 ==================
 
